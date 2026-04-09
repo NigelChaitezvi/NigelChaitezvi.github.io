@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nigel Chaitezvi — IT Professional</title>
+<title>Nigel Chaitezvi — IT Service Delivery & Operations Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -22,7 +22,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -34,7 +33,6 @@
     overflow-x: hidden;
   }
 
-  /* GRID LINES BACKGROUND */
   body::before {
     content: '';
     position: fixed;
@@ -47,7 +45,6 @@
     z-index: 0;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -56,37 +53,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 4rem;
-    background: rgba(10,12,15,0.9);
+    background: rgba(10,12,15,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
 
-  .nav-logo {
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
+  .nav-logo { font-family: var(--mono); font-size: 0.85rem; color: var(--accent); letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -96,547 +72,163 @@
     z-index: 1;
   }
 
-  .hero-inner { max-width: 800px; }
+  .hero-inner { max-width: 700px; }
 
-  .hero-tag {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
+  .hero-tag { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-tag::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent); }
 
-  .hero-tag::before {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
+  .hero h1 { font-family: var(--mono); font-size: clamp(2.4rem, 5.5vw, 4.5rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.5rem; color: var(--text); }
+  .hero h1 .highlight { color: var(--accent); }
 
-  .hero h1 {
-    font-family: var(--mono);
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-  }
+  .hero-sub { font-size: 1rem; color: var(--muted); max-width: 500px; margin-bottom: 2.5rem; line-height: 1.85; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  .hero h1 .highlight {
-    color: var(--accent);
-    position: relative;
-  }
+  .btn { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border: 1px solid var(--accent); color: var(--accent); background: transparent; text-decoration: none; cursor: pointer; transition: all 0.2s; display: inline-block; }
+  .btn:hover { background: var(--accent); color: var(--bg); }
+  .btn-ghost { border-color: var(--border); color: var(--muted); }
+  .btn-ghost:hover { border-color: var(--muted); background: transparent; color: var(--text); }
 
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 520px;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.85rem 2rem;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-
-  .btn:hover {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  .btn-ghost {
-    border-color: var(--border);
-    color: var(--muted);
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--muted);
-    background: transparent;
-    color: var(--text);
-  }
-
-  /* TERMINAL BLOCK */
-  .terminal {
-    position: absolute;
-    right: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 380px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    opacity: 0.85;
-  }
-
-  .terminal-bar {
-    background: var(--bg3);
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .terminal { position: absolute; right: 4rem; top: 50%; transform: translateY(-50%); width: 390px; background: var(--bg2); border: 1px solid var(--border); font-family: var(--mono); font-size: 0.78rem; opacity: 0.9; }
+  .terminal-bar { background: var(--bg3); padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); }
   .dot { width: 10px; height: 10px; border-radius: 50%; }
-  .dot-r { background: #ff5f57; }
-  .dot-y { background: #febc2e; }
-  .dot-g { background: #28c840; }
-
-  .terminal-body { padding: 1.25rem; line-height: 1.9; }
-
-  .t-prompt { color: var(--accent); }
-  .t-cmd { color: var(--text); }
-  .t-out { color: var(--muted); }
-  .t-val { color: var(--accent2); }
-  .t-cert { color: var(--accent3); }
-
-  .cursor {
-    display: inline-block;
-    width: 8px;
-    height: 14px;
-    background: var(--accent);
-    vertical-align: middle;
-    animation: blink 1s step-end infinite;
-  }
-
+  .dot-r { background: #ff5f57; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+  .terminal-body { padding: 1.25rem; line-height: 2; }
+  .t-prompt { color: var(--accent); } .t-cmd { color: var(--text); } .t-out { color: var(--muted); }
+  .t-val { color: var(--accent2); } .t-cert { color: var(--accent3); } .t-hi { color: var(--accent); }
+  .cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); vertical-align: middle; animation: blink 1s step-end infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  /* SECTIONS */
-  section {
-    position: relative;
-    z-index: 1;
-    padding: 6rem 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  section { position: relative; z-index: 1; padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-title { font-family: var(--mono); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 600; color: var(--text); margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
 
-  .section-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .stat { background: var(--bg2); padding: 1.5rem; }
+  .stat-num { font-family: var(--mono); font-size: 1.9rem; font-weight: 600; color: var(--accent); display: block; }
+  .stat-label { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
-  .section-title {
-    font-family: var(--mono);
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
+  .exp-list { display: grid; gap: 1px; background: var(--border); }
+  .exp-card { background: var(--bg2); padding: 2.5rem; transition: background 0.2s; }
+  .exp-card:hover { background: var(--bg3); }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .exp-title { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; color: var(--text); }
+  .exp-period { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); white-space: nowrap; flex-shrink: 0; }
+  .exp-company { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .exp-bullets { list-style: none; display: grid; gap: 0.5rem; }
+  .exp-bullets li { font-size: 0.85rem; color: var(--muted); padding-left: 1.25rem; position: relative; line-height: 1.65; }
+  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-family: var(--mono); font-size: 0.75rem; top: 0.1rem; }
+  .exp-bullets li strong { color: var(--text); font-weight: 500; }
 
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); }
+  .skill-cat { background: var(--bg2); padding: 2rem; }
+  .skill-cat-title { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); border: 1px solid var(--border); padding: 0.3rem 0.65rem; letter-spacing: 0.05em; transition: all 0.15s; }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
 
-  .about-text p {
-    color: var(--muted);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .stat {
-    background: var(--bg2);
-    padding: 1.5rem;
-  }
-
-  .stat-num {
-    font-family: var(--mono);
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent);
-    display: block;
-  }
-
-  .stat-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .skill-cat {
-    background: var(--bg2);
-    padding: 2rem;
-  }
-
-  .skill-cat-title {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .skill-cat-title .icon { font-size: 1rem; }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .tag {
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 0.3rem 0.65rem;
-    letter-spacing: 0.05em;
-    transition: all 0.15s;
-  }
-
-  .tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  /* PROJECTS */
-  .projects-grid {
-    display: grid;
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .project-card {
-    background: var(--bg2);
-    padding: 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    transition: background 0.2s;
-    cursor: default;
-  }
-
+  .projects-grid { display: grid; gap: 1px; background: var(--border); }
+  .project-card { background: var(--bg2); padding: 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; transition: background 0.2s; }
   .project-card:hover { background: var(--bg3); }
+  .project-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .project-type { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid currentColor; }
+  .type-work { color: var(--accent2); } .type-lab { color: var(--accent3); } .type-cert { color: var(--accent); }
+  .project-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+  .project-title { font-family: var(--mono); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
+  .project-desc { font-size: 0.87rem; color: var(--muted); max-width: 680px; margin-bottom: 1rem; line-height: 1.75; }
+  .project-impact { display: flex; align-items: flex-start; gap: 0.6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--accent); line-height: 1.5; }
+  .project-impact::before { content: '→'; flex-shrink: 0; margin-top: 0.05rem; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+  .project-tag { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); background: var(--bg3); padding: 0.2rem 0.5rem; border: 1px solid var(--border); }
+  .project-link { align-self: start; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.4rem 0.8rem; white-space: nowrap; transition: all 0.2s; }
+  .project-link:hover { border-color: var(--accent); color: var(--accent); }
 
-  .project-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .project-type {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid currentColor;
-  }
-
-  .type-work { color: var(--accent2); }
-  .type-lab { color: var(--accent3); }
-  .type-cert { color: var(--accent); }
-
-  .project-year {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--muted);
-  }
-
-  .project-title {
-    font-family: var(--mono);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.6rem;
-  }
-
-  .project-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
-    max-width: 680px;
-    margin-bottom: 1rem;
-    line-height: 1.7;
-  }
-
-  .project-impact {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    line-height: 1.5;
-  }
-
-  .project-impact::before {
-    content: '→';
-    flex-shrink: 0;
-    margin-top: 0.05rem;
-  }
-
-  .project-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1rem;
-  }
-
-  .project-tag {
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    color: var(--muted);
-    background: var(--bg3);
-    padding: 0.2rem 0.5rem;
-    border: 1px solid var(--border);
-  }
-
-  .project-link {
-    align-self: start;
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    padding: 0.4rem 0.8rem;
-    white-space: nowrap;
-    transition: all 0.2s;
-  }
-
-  .project-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  /* CERTS */
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .cert-card {
-    background: var(--bg2);
-    padding: 1.75rem;
-    transition: background 0.2s;
-  }
-
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); }
+  .cert-card { background: var(--bg2); padding: 1.75rem; transition: background 0.2s; }
   .cert-card:hover { background: var(--bg3); }
+  .cert-badge { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .cert-badge.earned { color: var(--accent); } .cert-badge.progress { color: var(--accent3); }
+  .cert-name { font-family: var(--mono); font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; line-height: 1.35; }
+  .cert-org { font-size: 0.78rem; color: var(--muted); }
+  .cert-date { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); margin-top: 0.75rem; display: block; }
+  .cert-date.progress { color: var(--accent3); }
 
-  .cert-badge {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--accent3);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-
-  .cert-name {
-    font-family: var(--mono);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.3rem;
-    line-height: 1.35;
-  }
-
-  .cert-org {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-
-  .cert-date {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--accent);
-    margin-top: 0.75rem;
-    display: block;
-  }
-
-  /* CONTACT */
-  .contact-inner {
-    max-width: 640px;
-  }
-
-  .contact-line {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-  }
-
-  .contact-icon {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent);
-    width: 80px;
-    flex-shrink: 0;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .contact-val {
-    color: var(--muted);
-    text-decoration: none;
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    transition: color 0.2s;
-  }
-
+  .contact-inner { max-width: 640px; }
+  .contact-line { display: flex; align-items: center; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .contact-icon { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); width: 90px; flex-shrink: 0; letter-spacing: 0.1em; text-transform: uppercase; }
+  .contact-val { color: var(--muted); text-decoration: none; font-family: var(--mono); font-size: 0.82rem; transition: color 0.2s; }
   .contact-val:hover { color: var(--accent); }
 
-  /* FOOTER */
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border);
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; }
+  .divider { position: relative; z-index: 1; width: 100%; height: 1px; background: var(--border); }
 
-  footer p {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-
-  /* DIVIDER */
-  .divider {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-inner > * {
-    animation: fadeUp 0.7s ease both;
-  }
-
-  .hero-tag { animation-delay: 0.1s; }
-  .hero h1  { animation-delay: 0.2s; }
-  .hero-sub { animation-delay: 0.3s; }
-  .hero-cta { animation-delay: 0.4s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.7s ease both; }
+  .hero-tag { animation-delay: 0.1s; } .hero h1 { animation-delay: 0.2s; } .hero-sub { animation-delay: 0.3s; } .hero-cta { animation-delay: 0.4s; }
   .terminal { animation: fadeUp 0.8s ease 0.5s both; }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
     .hero { padding: 6rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
     .terminal { position: static; transform: none; width: 100%; margin-top: 3rem; }
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; }
-    .nav-links { display: none; }
+    .exp-header { flex-direction: column; gap: 0.25rem; }
+    .project-card { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; text-align: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <span class="nav-logo">// Nigel Chaitezvi</span>
+  <span class="nav-logo">// nigel.chaitezvi</span>
   <ul class="nav-links">
     <li><a href="#about">about</a></li>
+    <li><a href="#experience">experience</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#projects">projects</a></li>
+    <li><a href="#labs">labs</a></li>
     <li><a href="#certs">certs</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">IT Professional · Systems & Infrastructure</div>
-    <h1>Your<br><span class="highlight">Name</span><br>Here.</h1>
+    <div class="hero-tag">IT Service Delivery &amp; Operations Manager</div>
+    <h1>Nigel<br><span class="highlight">Chaitezvi</span></h1>
     <p class="hero-sub">
-      I build, automate, and secure IT infrastructure. I translate technical complexity into measurable business outcomes — from network architecture to cloud migrations to zero-touch deployments.
+      7+ years building, securing, and scaling enterprise IT across four countries. I turn infrastructure complexity into measurable business outcomes — 98% SLA compliance, 60% faster incident resolution, 1,500+ users served.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn">View Projects</a>
-      <a href="resume.pdf" class="btn btn-ghost" target="_blank">Download CV</a>
+      <a href="Nigel_Chaitezvi_CV.pdf" class="btn btn-ghost" target="_blank" download>Download CV</a>
     </div>
   </div>
 
   <div class="terminal">
     <div class="terminal-bar">
-      <span class="dot dot-r"></span>
-      <span class="dot dot-y"></span>
-      <span class="dot dot-g"></span>
+      <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
     </div>
     <div class="terminal-body">
       <div><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></div>
-      <div class="t-out">→ <span class="t-val">it_professional</span></div>
+      <div class="t-out">→ <span class="t-val">nigel_chaitezvi</span></div>
       <br>
-      <div><span class="t-prompt">$ </span><span class="t-cmd">cat experience.txt</span></div>
-      <div class="t-out">→ <span class="t-val">8 years</span> in IT infrastructure</div>
-      <div class="t-out">→ <span class="t-val">Harare, Zimbabwe</span></div>
+      <div><span class="t-prompt">$ </span><span class="t-cmd">cat profile.txt</span></div>
+      <div class="t-out">→ Role: <span class="t-val">HVC IT Service Delivery Lead</span></div>
+      <div class="t-out">→ Co:&nbsp;&nbsp;<span class="t-val">Zimworx</span></div>
+      <div class="t-out">→ Loc:&nbsp;<span class="t-val">Harare, Zimbabwe</span></div>
+      <div class="t-out">→ Exp:&nbsp;<span class="t-val">7+ years</span></div>
       <br>
       <div><span class="t-prompt">$ </span><span class="t-cmd">ls certifications/</span></div>
-      <div><span class="t-cert">CompTIA_A+</span>  <span class="t-cert">Network+</span></div>
-      <div><span class="t-cert">CCNA</span>  <span class="t-cert">Azure_Admin</span></div>
+      <div><span class="t-cert">Fortinet_FCA</span>&nbsp;&nbsp;<span class="t-cert">FortiGate_Operator</span></div>
+      <div><span class="t-cert">Oracle_OCI</span>&nbsp;&nbsp;<span class="t-cert">ITIL4_[WIP]</span></div>
       <br>
-      <div><span class="t-prompt">$ </span><span class="t-cmd">echo $STATUS</span></div>
-      <div class="t-out">→ <span class="t-val">open_to_opportunities</span></div>
+      <div><span class="t-prompt">$ </span><span class="t-cmd">echo $KEY_METRICS</span></div>
+      <div class="t-out">→ <span class="t-hi">98% SLA · MTTR -60% · 1,500+ users</span></div>
       <br>
       <div><span class="t-prompt">$ </span><span class="cursor"></span></div>
     </div>
@@ -649,36 +241,91 @@
   <div class="section-title">The person behind the terminal</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I'm an IT professional with a passion for building infrastructure that works invisibly — fast, resilient, and secure. My background spans network engineering, systems administration, and cloud infrastructure.
-      </p>
-      <p>
-        What sets me apart is that I don't just fix problems — I document them, automate their prevention, and quantify the business impact of every improvement I make. This portfolio is proof of that.
-      </p>
-      <p>
-        When I'm not in production, I'm in my home lab — testing new tools, running through certification prep labs, and building things that probably shouldn't work but do.
-      </p>
+      <p>I'm an IT Service Delivery and Operations Manager with over 7 years of progressive leadership experience managing enterprise infrastructure, service desk operations, and high-value client relationships across four countries — Zimbabwe, USA, Costa Rica, and Zambia.</p>
+      <p>Currently leading end-to-end IT service delivery for international BPO clients at Zimworx, I'm accountable for 98% SLA compliance, cross-functional team performance, and infrastructure stability for 1,500+ users. I bridge the gap between complex technical systems and clear, measurable business outcomes.</p>
+      <p>I hold a First Class BSc (Hons) in Information Systems from Midlands State University — University Book Prize Winner, 2021. Outside of work I'm building home labs, studying for certifications, and documenting every project I ship.</p>
     </div>
     <div>
       <div class="about-stats">
-        <div class="stat">
-          <span class="stat-num">7+</span>
-          <span class="stat-label">Years in IT</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">12</span>
-          <span class="stat-label">Projects shipped</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">4</span>
-          <span class="stat-label">Certifications</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Industries served</span>
-        </div>
+        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Years in IT</span></div>
+        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">SLA Compliance</span></div>
+        <div class="stat"><span class="stat-num">1,500+</span><span class="stat-label">Users Supported</span></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Countries Served</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">02 / experience</div>
+  <div class="section-title">Career history</div>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">HVC IT Service Delivery Lead</div>
+        <div class="exp-period">Oct 2025 – Present</div>
+      </div>
+      <div class="exp-company">Global Tech Solutions – Zimworx &nbsp;|&nbsp; Harare, Zimbabwe</div>
+      <ul class="exp-bullets">
+        <li>Directed <strong>24/7 multi-region IT operations</strong> for 1,500+ users across Zimbabwe, USA, Costa Rica, and Zambia — maintaining <strong>98% SLA compliance</strong>.</li>
+        <li>Reduced <strong>Mean Time to Resolution (MTTR) by 60%</strong> through structured escalation frameworks and decision-tree troubleshooting protocols.</li>
+        <li>Increased <strong>First Contact Resolution to 80%</strong> and cut repeat escalations by 30% by redesigning service desk workflows.</li>
+        <li>Implemented centralised monitoring via <strong>Zabbix and FreshService dashboards</strong>, cutting incident response time by 80%.</li>
+        <li>Automated user provisioning and deprovisioning using <strong>PowerShell, APIs, and webhooks</strong> — eliminating manual errors across all sites.</li>
+        <li>Served as primary liaison between Technology Services and client leadership, contributing to HVC seat growth generating <strong>$32,000/month in recurring revenue</strong>.</li>
+        <li>Chaired weekly and monthly service review meetings, presenting SLA performance, risk reports, and capacity planning to executive stakeholders.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">Senior Global Technical Solutions Technician / Tier 3 IT Support</div>
+        <div class="exp-period">Jul 2021 – Sep 2025</div>
+      </div>
+      <div class="exp-company">Zimworx &nbsp;|&nbsp; Harare, Zimbabwe</div>
+      <ul class="exp-bullets">
+        <li>Supervised <strong>8 infrastructure and support technicians</strong> — daily helpdesk ops, escalation handling, performance oversight, and professional development.</li>
+        <li>Managed enterprise <strong>Active Directory for 1,500+ users</strong> across four countries, enforcing security policy through GPOs and automation.</li>
+        <li>Administered <strong>FortiGate Firewalls (201F, 100E, 101E)</strong> across 5 sites, maintaining network security standards and uptime.</li>
+        <li>Led enterprise initiatives: <strong>SD-WAN, network segmentation, Azure AD migration, ISP redundancy/failover, centralised proxy deployment, and NOC design</strong>.</li>
+        <li>Authored <strong>50+ Freshservice knowledge base articles</strong>, reducing repeat escalations by 30% and accelerating Tier 1 resolution.</li>
+        <li>Led <strong>50+ client IT onboarding engagements</strong> with zero onboarding delays. Delivered training to 200+ users, reducing related support requests by 20%.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">IT Support Technician</div>
+        <div class="exp-period">May 2022 – Dec 2023</div>
+      </div>
+      <div class="exp-company">Zimworx &nbsp;|&nbsp; Harare, Zimbabwe</div>
+      <ul class="exp-bullets">
+        <li>Provided Tier 1–2 IT support to <strong>600+ users</strong> across Zimbabwe, USA, and Costa Rica, adhering to strict SLAs.</li>
+        <li>Administered <strong>600+ email accounts</strong> via Google Workspace and cPanel; managed Microsoft 365 user accounts.</li>
+        <li>Administered the enterprise <strong>Zoom Phone platform</strong> — user management, call plan licensing, auto receptionist, and full call flow design.</li>
+        <li>Managed <strong>ConnectWise</strong> remote access — user/access management, agent deployment, and monitoring. FortiGate firewall administration.</li>
+        <li>Installed, configured, and maintained networking equipment: <strong>Ubiquiti, Cisco, FortiSwitches, UniFi</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">Graduate Trainee &amp; IT Intern</div>
+        <div class="exp-period">Jul 2021 – Apr 2022 &nbsp;·&nbsp; Oct 2018 – Jul 2019</div>
+      </div>
+      <div class="exp-company">Zimworx &nbsp;|&nbsp; Municipality of Chinhoyi &nbsp;|&nbsp; Zimbabwe</div>
+      <ul class="exp-bullets">
+        <li>Delivered Tier 1 IT support to 400+ users; supported Active Directory with 400+ user profiles including account setup and permissions management.</li>
+        <li>Installed and supported <strong>VoIP systems</strong> (Zoom, Ring Central, 8x8, GoToConnect) and VPN clients (FortiClient, Sophos SSL VPN).</li>
+        <li>Deployed and maintained 30+ workstations and network printers at Municipality of Chinhoyi; maintained <strong>100% software licence compliance</strong>.</li>
+        <li>Delivered <strong>ERP training</strong> (Belina Payroll, Sage Pastel) to 30+ staff, reducing ERP-related support requests post-rollout.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -686,189 +333,248 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">02 / skills</div>
+  <div class="section-label">03 / skills</div>
   <div class="section-title">What I work with</div>
   <div class="skills-grid">
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">🌐</span> Networking</div>
+      <div class="skill-cat-title">🌐 Networking</div>
       <div class="skill-tags">
-        <span class="tag">Cisco IOS</span>
+        <span class="tag">FortiGate (201F/100E/101E)</span>
+        <span class="tag">SD-WAN</span>
         <span class="tag">VLANs</span>
-        <span class="tag">BGP / OSPF</span>
-        <span class="tag">Firewall rules</span>
         <span class="tag">VPN / IPSec</span>
-        <span class="tag">Wireshark</span>
+        <span class="tag">Cisco IOS</span>
         <span class="tag">pfSense</span>
+        <span class="tag">Ubiquiti / UniFi</span>
+        <span class="tag">FortiSwitches</span>
         <span class="tag">DNS / DHCP</span>
+        <span class="tag">Network segmentation</span>
+        <span class="tag">ISP redundancy</span>
+        <span class="tag">TCP/IP</span>
+        <span class="tag">Wireshark</span>
       </div>
     </div>
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">🖥️</span> Systems</div>
+      <div class="skill-cat-title">🖥️ Systems &amp; Identity</div>
       <div class="skill-tags">
-        <span class="tag">Windows Server</span>
         <span class="tag">Active Directory</span>
-        <span class="tag">Ubuntu / RHEL</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">Group Policy (GPOs)</span>
+        <span class="tag">Azure AD / Entra ID</span>
+        <span class="tag">Azure AD Connect</span>
         <span class="tag">Hyper-V</span>
+        <span class="tag">Ubuntu / RHEL</span>
+        <span class="tag">Proxmox</span>
         <span class="tag">VMware vSphere</span>
-        <span class="tag">Group Policy</span>
-        <span class="tag">SCCM</span>
-        <span class="tag">WSUS</span>
       </div>
     </div>
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">☁️</span> Cloud</div>
+      <div class="skill-cat-title">☁️ Cloud &amp; Platforms</div>
       <div class="skill-tags">
-        <span class="tag">Azure</span>
-        <span class="tag">AWS EC2 / S3</span>
-        <span class="tag">Azure AD</span>
+        <span class="tag">Microsoft Azure</span>
+        <span class="tag">Oracle OCI</span>
         <span class="tag">Microsoft 365</span>
-        <span class="tag">Intune</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">ARM templates</span>
+        <span class="tag">Intune / MDM</span>
+        <span class="tag">Google Workspace</span>
+        <span class="tag">Conditional Access</span>
+        <span class="tag">ConnectWise</span>
+        <span class="tag">cPanel</span>
       </div>
     </div>
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">🔒</span> Security</div>
+      <div class="skill-cat-title">🔒 Security</div>
       <div class="skill-tags">
+        <span class="tag">FortiGate firewall admin</span>
         <span class="tag">MFA / SSO</span>
         <span class="tag">Zero Trust</span>
-        <span class="tag">SIEM (Splunk)</span>
+        <span class="tag">CIS Benchmarks</span>
         <span class="tag">Vulnerability scanning</span>
         <span class="tag">Patch management</span>
-        <span class="tag">CIS Benchmarks</span>
+        <span class="tag">Suricata IDS/IPS</span>
+        <span class="tag">Data security controls</span>
       </div>
     </div>
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">⚙️</span> Automation</div>
+      <div class="skill-cat-title">⚙️ Automation &amp; Scripting</div>
       <div class="skill-tags">
         <span class="tag">PowerShell</span>
         <span class="tag">Bash</span>
+        <span class="tag">APIs / Webhooks</span>
         <span class="tag">Python (scripting)</span>
-        <span class="tag">Ansible</span>
-        <span class="tag">Task Scheduler</span>
-        <span class="tag">Cron</span>
         <span class="tag">GitHub Actions</span>
+        <span class="tag">Task Scheduler</span>
+        <span class="tag">Ansible</span>
       </div>
     </div>
+
     <div class="skill-cat">
-      <div class="skill-cat-title"><span class="icon">🛠️</span> Tools & Monitoring</div>
+      <div class="skill-cat-title">📊 ITSM, Monitoring &amp; Leadership</div>
       <div class="skill-tags">
+        <span class="tag">FreshService ITSM</span>
         <span class="tag">Zabbix</span>
-        <span class="tag">Nagios</span>
-        <span class="tag">PRTG</span>
         <span class="tag">Grafana</span>
-        <span class="tag">ServiceNow</span>
-        <span class="tag">Jira</span>
-        <span class="tag">Git</span>
+        <span class="tag">PRTG</span>
+        <span class="tag">NOC design</span>
+        <span class="tag">ITIL 4</span>
+        <span class="tag">SLA / KPI management</span>
+        <span class="tag">Team leadership</span>
+        <span class="tag">Zoom Phone / VoIP</span>
+        <span class="tag">Vendor management</span>
       </div>
     </div>
+
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PROJECTS -->
+<!-- WORK PROJECTS -->
 <section id="projects">
-  <div class="section-label">03 / projects &amp; labs</div>
-  <div class="section-title">Work that matters</div>
-
+  <div class="section-label">04 / work projects</div>
+  <div class="section-title">Delivered at work</div>
   <div class="projects-grid">
 
-    <!-- PROJECT 1 -->
     <div class="project-card">
       <div>
-        <div class="project-meta">
-          <span class="project-type type-work">Work project</span>
-          <span class="project-year">2024</span>
-        </div>
-        <div class="project-title">Enterprise patch management automation</div>
-        <div class="project-desc">
-          Designed and deployed a fully automated patch management pipeline using WSUS, PowerShell, and scheduled task orchestration across 340 endpoints. Eliminated manual patching cycles that were consuming 12+ hours of IT time per month.
-        </div>
-        <div class="project-impact">
-          Reduced patch cycle time from 3 weeks to 48 hours. Cut unpatched critical CVEs by 94%. Freed 12 hours/month of engineering time.
-        </div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2025–Present</span></div>
+        <div class="project-title">HVC IT service delivery framework — 4 countries</div>
+        <div class="project-desc">Architected and operationalised end-to-end IT service delivery for international BPO high-value clients across Zimbabwe, USA, Costa Rica, and Zambia. Rebuilt escalation frameworks, redesigned service desk workflows, and implemented centralised monitoring via Zabbix and FreshService dashboards with automated provisioning pipelines.</div>
+        <div class="project-impact">98% SLA compliance. MTTR reduced by 60%. FCR increased to 80%. Repeat escalations down 30%. Incident response time cut by 80%. Contributing to $32k/month in HVC revenue.</div>
         <div class="project-stack">
-          <span class="project-tag">PowerShell</span>
-          <span class="project-tag">WSUS</span>
-          <span class="project-tag">Windows Server 2022</span>
-          <span class="project-tag">Active Directory</span>
-          <span class="project-tag">SCCM</span>
+          <span class="project-tag">FreshService</span><span class="project-tag">Zabbix</span><span class="project-tag">PowerShell</span><span class="project-tag">APIs / Webhooks</span><span class="project-tag">FortiGate</span><span class="project-tag">Azure AD</span>
         </div>
       </div>
       <a href="#" class="project-link">View →</a>
     </div>
 
-    <!-- PROJECT 2 -->
     <div class="project-card">
       <div>
-        <div class="project-meta">
-          <span class="project-type type-work">Work project</span>
-          <span class="project-year">2023</span>
-        </div>
-        <div class="project-title">Azure AD hybrid identity migration</div>
-        <div class="project-desc">
-          Led the migration of 200 users from on-premises Active Directory to Azure AD hybrid identity with seamless SSO. Configured Azure AD Connect, Conditional Access policies, and MFA enforcement with zero downtime.
-        </div>
-        <div class="project-impact">
-          Zero downtime migration. MFA adoption reached 100%. Reduced helpdesk password reset tickets by 60%.
-        </div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2024</span></div>
+        <div class="project-title">Zimbabwe ISP migration &amp; redundancy failover architecture</div>
+        <div class="project-desc">Executed a full ISP transition with redundancy failover design across multiple Zimbabwe sites. Designed failover logic to automatically route traffic on primary ISP failure with no manual intervention — built on FortiGate SD-WAN with health-check driven policy routing.</div>
+        <div class="project-impact">Multi-site uptime reliability improved by over 90%. Zero-downtime ISP cutover. Eliminated all single points of failure across sites.</div>
         <div class="project-stack">
-          <span class="project-tag">Azure AD</span>
-          <span class="project-tag">Azure AD Connect</span>
-          <span class="project-tag">Conditional Access</span>
-          <span class="project-tag">MFA</span>
-          <span class="project-tag">PowerShell</span>
+          <span class="project-tag">FortiGate</span><span class="project-tag">SD-WAN</span><span class="project-tag">ISP failover</span><span class="project-tag">Network redundancy</span><span class="project-tag">BGP</span>
         </div>
       </div>
       <a href="#" class="project-link">View →</a>
     </div>
 
-    <!-- PROJECT 3 -->
     <div class="project-card">
       <div>
-        <div class="project-meta">
-          <span class="project-type type-lab">Home lab</span>
-          <span class="project-year">2024</span>
-        </div>
-        <div class="project-title">Home network segmentation with pfSense &amp; VLANs</div>
-        <div class="project-desc">
-          Built a fully segmented home lab network using pfSense as the core firewall/router. Configured 5 VLANs (management, IoT, servers, guest, work) with inter-VLAN firewall rules and a Suricata IDS/IPS layer.
-        </div>
-        <div class="project-impact">
-          Isolated IoT devices from core network. Detected and blocked 3 suspicious outbound connection attempts within first week of IDS deployment.
-        </div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2023</span></div>
+        <div class="project-title">Active Directory migration to Azure hybrid identity — 1,500 users</div>
+        <div class="project-desc">Led the migration from on-premises AD to Azure AD hybrid identity for 1,500+ users across four countries. Configured Azure AD Connect, Conditional Access policies, MFA enforcement, and SSO — with zero downtime and no user disruption.</div>
+        <div class="project-impact">Zero downtime migration. MFA adoption 100%. Password reset helpdesk tickets reduced by 60%. Enabled secure remote access for all international sites.</div>
         <div class="project-stack">
-          <span class="project-tag">pfSense</span>
-          <span class="project-tag">VLANs</span>
-          <span class="project-tag">Suricata</span>
-          <span class="project-tag">Managed switch</span>
-          <span class="project-tag">Proxmox</span>
+          <span class="project-tag">Azure AD</span><span class="project-tag">Azure AD Connect</span><span class="project-tag">Conditional Access</span><span class="project-tag">MFA</span><span class="project-tag">PowerShell</span><span class="project-tag">SSO</span>
         </div>
       </div>
       <a href="#" class="project-link">View →</a>
     </div>
 
-    <!-- PROJECT 4 -->
     <div class="project-card">
       <div>
-        <div class="project-meta">
-          <span class="project-type type-lab">Home lab</span>
-          <span class="project-year">2024</span>
-        </div>
-        <div class="project-title">Active Directory lab with attack &amp; defend scenarios</div>
-        <div class="project-desc">
-          Stood up a full Active Directory environment in Proxmox VMs (Windows Server 2022 DC + 3 workstations) to simulate enterprise attack scenarios — kerberoasting, pass-the-hash, LLMNR poisoning — and practice defensive hardening.
-        </div>
-        <div class="project-impact">
-          Developed a hardening checklist based on CIS benchmarks that reduced attack surface by 70% against simulated attacks. Used as study material for Security+ certification.
-        </div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2023</span></div>
+        <div class="project-title">Costa Rica office launch — network build from scratch</div>
+        <div class="project-desc">Designed and implemented scalable network infrastructure from the ground up for a new Central America office supporting up to 100 users. Handled firewall policy design, VLAN segmentation, VPN tunnels, Zoom Phone provisioning, and full user onboarding — coordinated remotely from Zimbabwe.</div>
+        <div class="project-impact">Site live on schedule with zero post-launch critical incidents. Full VPN connectivity and telephony operational from day one.</div>
         <div class="project-stack">
-          <span class="project-tag">Proxmox</span>
-          <span class="project-tag">Windows Server 2022</span>
-          <span class="project-tag">Mimikatz</span>
-          <span class="project-tag">Responder</span>
-          <span class="project-tag">BloodHound</span>
+          <span class="project-tag">FortiGate</span><span class="project-tag">VLANs</span><span class="project-tag">VPN tunnels</span><span class="project-tag">Zoom Phone</span><span class="project-tag">SD-WAN</span><span class="project-tag">Active Directory</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2023</span></div>
+        <div class="project-title">Structured network redesign — Joina City</div>
+        <div class="project-desc">Led full network remodelling of a legacy flat-network site, replacing ageing infrastructure with a fully segmented VLAN design. Updated FortiGate firewall policies, replaced unmanaged switches with FortiSwitches, and brought the site in line with modern security and performance standards.</div>
+        <div class="project-impact">Eliminated legacy flat-network exposure. Increased site reliability significantly. Aligned with CIS security standards post-implementation.</div>
+        <div class="project-stack">
+          <span class="project-tag">FortiGate</span><span class="project-tag">FortiSwitches</span><span class="project-tag">VLANs</span><span class="project-tag">Network segmentation</span><span class="project-tag">Structured cabling</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-work">Work project</span><span class="project-year">2022</span></div>
+        <div class="project-title">FreshService ITSM implementation &amp; multi-site rollout</div>
+        <div class="project-desc">Led the organisation-wide deployment of FreshService as the ITSM platform. Configured SLA policies, ticket automation rules, asset tracking integration, and escalation workflows. Authored 50+ knowledge base articles to empower Tier 1 resolution without escalation.</div>
+        <div class="project-impact">Incident resolution time improved by 40%. Repeat escalations down 30%. Knowledge base reduced Tier 1 handle time across all sites.</div>
+        <div class="project-stack">
+          <span class="project-tag">FreshService</span><span class="project-tag">ITIL 4</span><span class="project-tag">SLA automation</span><span class="project-tag">Asset management</span><span class="project-tag">Knowledge management</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LABS -->
+<section id="labs">
+  <div class="section-label">05 / home labs &amp; self-study</div>
+  <div class="section-title">What I build outside of work</div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-lab">Home lab</span><span class="project-year">2024</span></div>
+        <div class="project-title">Home network segmentation — pfSense &amp; VLANs</div>
+        <div class="project-desc">Built a fully segmented home lab network using pfSense as the core firewall/router. Configured 5 VLANs (management, IoT, servers, guest, work) with inter-VLAN firewall rules and a Suricata IDS/IPS layer — replicating enterprise network design at home scale to deepen hands-on skills.</div>
+        <div class="project-impact">IoT devices fully isolated from core network. Suricata detected and blocked 3 suspicious outbound connection attempts within the first week of IDS deployment.</div>
+        <div class="project-stack">
+          <span class="project-tag">pfSense</span><span class="project-tag">VLANs</span><span class="project-tag">Suricata IDS/IPS</span><span class="project-tag">Managed switch</span><span class="project-tag">Proxmox</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-lab">Home lab</span><span class="project-year">2024</span></div>
+        <div class="project-title">Active Directory attack &amp; defend lab — Proxmox VMs</div>
+        <div class="project-desc">Stood up a full AD environment in Proxmox (Windows Server 2022 DC + 3 workstations) to simulate enterprise attack scenarios — kerberoasting, pass-the-hash, LLMNR poisoning — and practice defensive hardening. Used as hands-on study material and to validate security controls applied at work.</div>
+        <div class="project-impact">Built a CIS benchmark hardening checklist that reduced simulated attack surface by 70%. Learnings directly applied to production AD security improvements at Zimworx.</div>
+        <div class="project-stack">
+          <span class="project-tag">Proxmox</span><span class="project-tag">Windows Server 2022</span><span class="project-tag">Mimikatz</span><span class="project-tag">Responder</span><span class="project-tag">BloodHound</span><span class="project-tag">CIS Benchmarks</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-lab">Home lab</span><span class="project-year">2025</span></div>
+        <div class="project-title">Personal NOC monitoring stack — Zabbix + Grafana</div>
+        <div class="project-desc">Built a personal NOC monitoring environment using Zabbix for infrastructure monitoring and Grafana for dashboards — mirroring the centralised monitoring architecture deployed at work. Monitors home lab VMs, network devices, and uptime metrics in real time via SNMP and Zabbix agents.</div>
+        <div class="project-impact">Served as proof-of-concept for dashboards later deployed at Zimworx across 5+ sites. Active home lab monitoring environment running continuously.</div>
+        <div class="project-stack">
+          <span class="project-tag">Zabbix</span><span class="project-tag">Grafana</span><span class="project-tag">Proxmox</span><span class="project-tag">Ubuntu Server</span><span class="project-tag">SNMP</span>
+        </div>
+      </div>
+      <a href="#" class="project-link">View →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-meta"><span class="project-type type-cert">Cert study</span><span class="project-year">2025–Present</span></div>
+        <div class="project-title">ITIL 4 Foundation — structured study &amp; applied practice</div>
+        <div class="project-desc">Structured self-study for ITIL 4 Foundation certification covering the service value system, four dimensions model, guiding principles, and core ITIL practices. Actively applying ITIL concepts in my current role — incident management, change enablement, knowledge management — to reinforce theory with live practice.</div>
+        <div class="project-impact">Direct application: redesigned escalation framework, change governance, and knowledge base strategy at Zimworx all align with ITIL 4 practices. Exam scheduled for 2025.</div>
+        <div class="project-stack">
+          <span class="project-tag">ITIL 4</span><span class="project-tag">Service management</span><span class="project-tag">Change enablement</span><span class="project-tag">Incident management</span><span class="project-tag">Knowledge management</span>
         </div>
       </div>
       <a href="#" class="project-link">View →</a>
@@ -881,52 +587,52 @@
 
 <!-- CERTS -->
 <section id="certs">
-  <div class="section-label">04 / certifications</div>
+  <div class="section-label">06 / certifications &amp; education</div>
   <div class="section-title">Credentials</div>
   <div class="certs-grid">
 
     <div class="cert-card">
-      <div class="cert-badge">● CompTIA</div>
-      <div class="cert-name">CompTIA A+</div>
-      <div class="cert-org">CompTIA</div>
-      <span class="cert-date">Earned: Jan 2020</span>
+      <div class="cert-badge earned">● Earned · Fortinet</div>
+      <div class="cert-name">Fortinet Certified Associate – Cybersecurity</div>
+      <div class="cert-org">Fortinet</div>
+      <span class="cert-date">March 2026</span>
     </div>
 
     <div class="cert-card">
-      <div class="cert-badge">● CompTIA</div>
-      <div class="cert-name">CompTIA Network+</div>
-      <div class="cert-org">CompTIA</div>
-      <span class="cert-date">Earned: Aug 2021</span>
+      <div class="cert-badge earned">● Earned · Fortinet</div>
+      <div class="cert-name">Fortinet FortiGate 7.6 Operator</div>
+      <div class="cert-org">Fortinet</div>
+      <span class="cert-date">March 2026</span>
     </div>
 
     <div class="cert-card">
-      <div class="cert-badge">● Cisco</div>
-      <div class="cert-name">CCNA</div>
-      <div class="cert-org">Cisco Systems</div>
-      <span class="cert-date">Earned: Mar 2022</span>
+      <div class="cert-badge earned">● Earned · Oracle</div>
+      <div class="cert-name">Oracle Cloud Infrastructure Foundations Associate</div>
+      <div class="cert-org">Oracle</div>
+      <span class="cert-date">February 2022</span>
     </div>
 
     <div class="cert-card">
-      <div class="cert-badge">● Microsoft</div>
-      <div class="cert-name">Azure Administrator (AZ-104)</div>
-      <div class="cert-org">Microsoft</div>
-      <span class="cert-date">Earned: Nov 2023</span>
+      <div class="cert-badge progress">● In Progress</div>
+      <div class="cert-name">ITIL 4 Foundation</div>
+      <div class="cert-org">AXELOS / PeopleCert</div>
+      <span class="cert-date progress">Target: 2025</span>
     </div>
 
-    <div class="cert-card">
-      <div class="cert-badge">● In progress</div>
-      <div class="cert-name">CompTIA Security+</div>
-      <div class="cert-org">CompTIA</div>
-      <span class="cert-date" style="color: var(--accent3)">Target: Q2 2025</span>
-    </div>
+  </div>
 
-    <div class="cert-card">
-      <div class="cert-badge">● In progress</div>
-      <div class="cert-name">Azure Solutions Architect (AZ-305)</div>
-      <div class="cert-org">Microsoft</div>
-      <span class="cert-date" style="color: var(--accent3)">Target: Q4 2025</span>
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+    <div class="section-label" style="margin-bottom: 1.5rem;">Education</div>
+    <div style="background: var(--bg2); padding: 2rem; border: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div style="font-family: var(--mono); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem;">BSc (Hons) Information Systems — First Class</div>
+          <div style="font-size: 0.85rem; color: var(--muted);">Midlands State University &nbsp;|&nbsp; Gweru, Zimbabwe</div>
+          <div style="font-family: var(--mono); font-size: 0.75rem; color: var(--accent); margin-top: 0.75rem;">🏆 University Book Prize Winner, 2021</div>
+        </div>
+        <div style="font-family: var(--mono); font-size: 0.7rem; color: var(--accent); flex-shrink: 0;">2016 – 2021</div>
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -934,12 +640,16 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label">05 / contact</div>
+  <div class="section-label">07 / contact</div>
   <div class="section-title">Get in touch</div>
   <div class="contact-inner">
     <div class="contact-line">
       <span class="contact-icon">Email</span>
       <a href="mailto:nigelchaitezvi@gmail.com" class="contact-val">nigelchaitezvi@gmail.com</a>
+    </div>
+    <div class="contact-line">
+      <span class="contact-icon">Phone</span>
+      <a href="tel:+263783018882" class="contact-val">+263 783 018 882</a>
     </div>
     <div class="contact-line">
       <span class="contact-icon">LinkedIn</span>
@@ -950,17 +660,12 @@
       <a href="https://github.com/NigelChaitezvi" class="contact-val" target="_blank">github.com/NigelChaitezvi</a>
     </div>
     <div class="contact-line">
-      <span class="contact-icon">TryHackMe</span>
-      <a href="https://tryhackme.com/p/yourhandle" class="contact-val" target="_blank">tryhackme.com/p/yourhandle</a>
-    </div>
-    <div class="contact-line">
       <span class="contact-icon">Location</span>
       <span class="contact-val">Harare, Zimbabwe</span>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>// Built with raw HTML — no frameworks, no nonsense.</p>
   <p>© 2026 Nigel Chaitezvi</p>
